@@ -1,0 +1,18 @@
+{
+    "name": "cifren/makeit",
+    "description": "make it better, simpler",
+    "authors": [
+        {
+            "name": "cifren",
+            "email": "cifren@msn.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Make\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/console": "^5.1"
+    }
+}

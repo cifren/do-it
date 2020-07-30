@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Make\MakeCommand;
+use Symfony\Component\Console\Input\ArgvInput;
+
+$application = new Application();
+
+$application->add(new MakeCommand());
+
+$input = new ArgvInput();
+$application->run($input);

@@ -1,1 +1,7 @@
-# do-it
+## Usage
+
+run
+
+```bash
+./do-it list
+```
