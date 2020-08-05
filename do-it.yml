@@ -1,0 +1,18 @@
+#vars:
+#    dkc: &dkc docker-compose
+#    dk_php: &dk_php !concat [*dkc, run --rm php php]
+
+command:
+    test: echo "test
+#    php: &php
+#        command:
+#        - *dk_php
+#    install:
+#        before:
+#            - ll
+#            - ls -l
+#        after:
+#            - echo "lol"
+#        command:
+#            - echo command
+#            - !concat [*php, -v]

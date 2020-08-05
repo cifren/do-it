@@ -9,10 +9,13 @@
     ],
     "autoload": {
         "psr-4": {
-            "Make\\": "src/"
+            "Doit\\": "src/"
         }
     },
     "require": {
-        "symfony/console": "^5.1"
+        "php": "7.4",
+        "symfony/console": "^5.1",
+        "symfony/yaml": "^5.1",
+        "symfony/var-dumper": "^5.1"
     }
 }
