@@ -1,9 +1,10 @@
+extends:
 #vars:
 #    dkc: &dkc docker-compose
 #    dk_php: &dk_php !concat [*dkc, run --rm php php]
 
 command:
-    test: echo "test
+    test: ll
 #    php: &php
 #        command:
 #        - *dk_php

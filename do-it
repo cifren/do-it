@@ -3,19 +3,21 @@
 
 require __DIR__.'/vendor/autoload.php';
 
-use Doit\Executer;
+use Doit\ExecuterCommand;
 use Symfony\Component\Console\Input\ArgvInput;
-
 use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Yaml;
+use Symfony\Component\Console\Application;
 
 try {
     $value = Yaml::parseFile(__DIR__.'/do-it.yml',Yaml::PARSE_CUSTOM_TAGS);
 } catch (ParseException $exception) {
     printf('Unable to parse the YAML string: %s', $exception->getMessage());
 }
+// Insert 'app:run-command' to define it as default
+array_splice( $_SERVER['argv'], 1, 0, 'app:run-command' );
+$args = array_splice( $_SERVER['argv'], 3, 100);
 
-$input = new ArgvInput();
-
-$executer = new Executer($value);
-$executer->execute($input);
+$application = new Application();
+$application->add(new ExecuterCommand($value, $args));
+$application->run();
